@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Render CV
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "Angelo_Polatto_PT-BR_CV.yaml"
+      - "Angelo_Polatto_EN-US_CV.yaml"
+      - ".github/workflows/render-curriculum.yml"
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install UV
+        uses: astral-sh/setup-uv@v8.1.0
+        with:
+          enable-cache: true
+
+      - name: Install RenderCV with UV
+        run: |
+          uv sync --locked
+
+      - name: Render CV
+        run: |
+          ./render-cv.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: cv-output
+          path: rendercv_output/Angelo_Polatto_*.{pdf}
+          retention-days: 30
+
+      - name: Display generated files
+        run: |
+          echo "✅ CV generated successfully!"
+          echo "Generated files:"
+          ls -lah rendercv_output/Angelo_Polatto_*.{pdf}

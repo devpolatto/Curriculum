@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Curriculum"
+version = "1.0.0"
+description = "Professional CV rendering tool using RenderCV"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Angelo Polatto", email = "polatto.xcode.job@gmail.com"}
+]
+keywords = ["cv", "curriculum", "rendercv"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "rendercv[full]>=2.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/devpolatto/Curriculum"
+Repository = "https://github.com/devpolatto/Curriculum"
+Issues = "https://github.com/devpolatto/Curriculum/issues"
+
+[tool.uv.sources]
+# Se precisar usar uma versão específica do RenderCV
+# rendercv = { git = "https://github.com/sinaatalay/rendercv.git" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"

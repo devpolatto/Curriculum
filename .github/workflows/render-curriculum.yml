@@ -39,7 +39,7 @@ jobs:
           ./render-cv.sh
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cv-output
           path: rendercv_output/Angelo_Polatto_*.{pdf}

@@ -7,7 +7,7 @@ languages=(
 
 for lang in "${languages[@]}"; do
   echo "Generating PDF for language: $lang"
-  rendercv render "Angelo_Polatto_${lang}_CV.yaml" --pdf-path "rendercv_output/Angelo_Polatto_${lang}_CV.pdf"
+  uv run rendercv render "Angelo_Polatto_${lang}_CV.yaml" --pdf-path "rendercv_output/Angelo_Polatto_${lang}_CV.pdf"
   if [ $? -ne 0 ]; then
     echo "Error generating PDF for language: $lang"
     exit 1

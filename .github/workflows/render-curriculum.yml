@@ -12,6 +12,9 @@ on:
       - ".github/workflows/render-curriculum.yml"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -45,8 +48,13 @@ jobs:
           path: rendercv_output/Angelo_Polatto_*.pdf
           retention-days: 30
 
-      - name: Display generated files
+      - name: Update latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          echo "✅ CV generated successfully!"
-          echo "Generated files:"
-          ls -lah rendercv_output/Angelo_Polatto_*.pdf
+          gh release delete latest --yes || true
+          git tag -f latest
+          git push -f origin latest
+          gh release create latest rendercv_output/Angelo_Polatto_*.pdf \
+            --title "Latest CV" \
+            --notes "Generated on $(date -u '+%Y-%m-%d %H:%M UTC') from commit ${{ github.sha }}"

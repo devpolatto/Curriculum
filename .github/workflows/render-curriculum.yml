@@ -42,11 +42,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cv-output
-          path: rendercv_output/Angelo_Polatto_*.{pdf}
+          path: rendercv_output/Angelo_Polatto_*.pdf
           retention-days: 30
 
       - name: Display generated files
         run: |
           echo "✅ CV generated successfully!"
           echo "Generated files:"
-          ls -lah rendercv_output/Angelo_Polatto_*.{pdf}
+          ls -lah rendercv_output/Angelo_Polatto_*.pdf

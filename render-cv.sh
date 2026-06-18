@@ -2,7 +2,7 @@
 
 languages=(
   "EN-US"
-  "PR-BR"
+  "PT-BR"
 )
 
 for lang in "${languages[@]}"; do

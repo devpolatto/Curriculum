@@ -57,6 +57,8 @@ cv:
           - Development and maintenance of observability systems with Elasticsearch, Kibana, and Grafana.
           - Building and evolving CI/CD pipelines using Azure DevOps.
           - Orchestration of cloud-native applications with Kubernetes and Helm, ensuring high availability and scalability.
+          - Rightsized Kubernetes workloads using consumption dashboards — requests/limits tuning and autoscaling — enabling smaller cluster nodes with no performance impact.
+          - Automated off-hours shutdown of dev/staging/prod resources with an Azure Function, reducing monthly operating costs.
           - Automation of deployment and configuration processes with Bash and Python.
           - Participation in agile practices, contributing to technical priority definition and team alignment.
       - company: Acqio
@@ -86,7 +88,7 @@ cv:
           - Fortinet assets setup and support (Fortigate, FortiAnalyzer, FortiManager)
     Skills:
       - label: Cloud & Infrastructure
-        details: Oracle Cloud (OCI — OKE, Vault, DRG, Object Storage), AWS, Microsoft Azure, Linux server administration, on-premise infrastructure, Event-Driven Architecture.
+        details: Oracle Cloud (OCI — OKE, Vault, DRG, Object Storage), AWS, Microsoft Azure, Linux server administration, on-premise infrastructure, Event-Driven Architecture, FinOps (rightsizing and cost optimization).
 
       - label: Infrastructure as Code (IaC)
         details: Terraform (reusable modules, import, and state refactoring), AWS CDK (TypeScript), CloudFormation, Ansible, Azure SDK

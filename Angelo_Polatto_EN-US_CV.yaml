@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
 cv:
   name: Angelo Polatto
-  headline: DevOps Enginnering
+  headline: DevOps Engineer | Cloud Platform
   location: Recife, PE, Brazil
   email: polatto.xcode.job@gmail.com
   phone: +55 81 99976-6539
@@ -13,12 +13,12 @@ cv:
       username: devpolatto
   sections:
     About me:
-      - DevOps and Cloud Architect focused on AWS and Azure, automation, and infrastructure as code.
-      - AWS Certified Solutions Architect Associate, working with CI/CD, AWS CDK, TypeScript, and Python.
-      - Experience in cloud-native environments, observability, microservices, Kubernetes, and serverless solutions.
-      - Multi-cloud experience (AWS, Azure) and Linux production environment administration.
-      - Expertise in data pipelines with ETL, large-scale processing using Kinesis, DataBricks, EMR, and Spark.
-      - Focused on scalable, resilient architectures aligned with software best practices.
+      - DevOps / Cloud Platform Engineer with multi-cloud experience (OCI, AWS, and Azure), infrastructure as code, and GitOps.
+      - HashiCorp Terraform Associate and AWS Certified Solutions Architect Associate.
+      - Running multi-tenant Kubernetes platforms in production — ArgoCD, Helm, CI/CD, secrets management, and incident response.
+      - Strong networking and edge security background — site-to-site IPSec VPN, FortiWeb WAF, and the Fortinet ecosystem.
+      - Observability with Elastic, Grafana, Prometheus, and Dynatrace; data pipelines with Kinesis, Databricks, EMR, and Spark.
+      - Measurement-driven root cause analysis, with reproducible documentation in runbooks and postmortems.
     Education:
       - institution: UNIBRA - Centro Universitário Brasileiro
         area: Computer Networks Technologist
@@ -30,6 +30,21 @@ cv:
         location: Recife, PE, Brazil
         summary: Network Architecture, Information Security, Linux Systems Administration.
     Experience:
+      - company: Equanimüs (GovONE)
+        position: DevOps Engineer
+        date:
+        start_date: 2026-07
+        end_date: present
+        location: Remote
+        summary: DevOps / Cloud Platform engineering for a multi-tenant digital government SaaS platform on Kubernetes (OKE/OCI), serving municipalities in Brazil and a digital identity project in Mozambique.
+        highlights:
+          - Split monolithic Terraform (staging and production, ~57 resources each) into 6 domain projects, adopting live infrastructure via import; caught 2 destructive plans before apply and built reusable VPN and egress gateway modules.
+          - Led the infrastructure side of migrating managed PostgreSQL from OCI to an on-premise data center in Mozambique — requirements, IPSec VPN, initial load, and 24h latency measurement (p95 RTT of 10.7 ms).
+          - Consolidated staging and production FortiWeb WAFs into a single appliance (~5 s cutover per environment, TLS 1.0/1.1 disabled) and handled signature false positives with host- and path-scoped exceptions.
+          - Site-to-site IPSec VPNs with international partners and an SNAT egress gateway.
+          - External Secrets + OCI Vault with Workload Identity across 3 clusters, eliminating exposed private keys.
+          - GitOps with ArgoCD, Helmfile, and GitLab CI — restored sync for 151 applications in ~3 min and cut a Python API build time by 51%.
+          - Production RCA (Node.js OOM, health probes, HPA, TLS), documented in 40 runbooks and 6 postmortems.
       - company: Acqio
         position: DevOps Engineer
         date:
@@ -71,28 +86,31 @@ cv:
           - Fortinet assets setup and support (Fortigate, FortiAnalyzer, FortiManager)
     Skills:
       - label: Cloud & Infrastructure
-        details: AWS, Microsoft Azure, Linux server administration, On-premise infrastructure, Event-Driven Architecture.
+        details: Oracle Cloud (OCI — OKE, Vault, DRG, Object Storage), AWS, Microsoft Azure, Linux server administration, on-premise infrastructure, Event-Driven Architecture.
 
       - label: Infrastructure as Code (IaC)
-        details: Terraform, AWS CDK (TypeScript), CloudFormation, Ansible, Azure SDK, declarative, versioned, and automated infrastructure provisioning
+        details: Terraform (reusable modules, import, and state refactoring), AWS CDK (TypeScript), CloudFormation, Ansible, Azure SDK
 
       - label: Containers & Orchestration
-        details: Kubernetes (AKS, EKS), Helm, Docker, Service Mesh (Istio), application orchestration, high availability and resilience, networking, security and troubleshooting in Kubernetes clusters
+        details: Kubernetes (OKE, AKS, EKS), Helm, Helmfile, Docker, Service Mesh (Istio), high availability, HPA, health probes, and troubleshooting in Kubernetes clusters
 
-      - label: CI/CD & Automation
-        details: Azure DevOps, CI/CD pipelines, deployment automation, continuous delivery workflows, Bash
+      - label: CI/CD & GitOps
+        details: GitLab CI, Azure DevOps, ArgoCD, GitOps, registries (Harbor, OCIR), deployment automation, Bash
+
+      - label: Security & Secrets
+        details: External Secrets Operator, OCI Vault, Workload Identity, least-privilege RBAC, FortiWeb WAF, Fortinet (FortiGate, FortiAnalyzer, FortiManager), TLS
 
       - label: Programming & Automation
         details: Python, TypeScript, Bash, AWS Lambda, task automation, and script development
 
       - label: Observability, Monitoring & Reliability
-        details: Elasticsearch, Logstash, Kibana, Grafana, Prometheus, Elastic APM, metrics, logs, and tracing, SLAs and SLOs
+        details: Dynatrace, Elasticsearch, Logstash, Kibana, Grafana, Prometheus, Zabbix, Elastic APM, metrics, logs, and tracing, SLAs and SLOs
 
       - label: Data & Messaging
         details: MongoDB, RDS, Cassandra, PostgreSQL, Redis, Kafka (AWS MSK), SQS, EMR, Kinesis, S3, Spark, Hadoop
 
       - label: Operating Systems & Networking
-        details: Linux, NGINX (reverse proxy), networking, SSH, DNS, security, and vulnerability analysis
+        details: Linux, site-to-site IPSec VPN, SNAT and egress gateway, HAProxy, NGINX (reverse proxy), DNS, SSH, vulnerability analysis
 
       - label: Agile Methodologies & Collaboration
         details: Scrum (Daily, Sprint Planning), technical alignment, prioritization, and collaboration between teams
